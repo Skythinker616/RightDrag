@@ -331,5 +331,5 @@ void MainWindow::on_actionDonate_triggered()
 
 void MainWindow::on_actionHelp_triggered()
 {
-    QDesktopServices::openUrl(QUrl("help.html"));
+    QDesktopServices::openUrl(QUrl("https://github.com/BowenLan/RightDrag/blob/master/help.md"));
 }

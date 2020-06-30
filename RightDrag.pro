@@ -46,6 +46,17 @@ FORMS += \
 
 RC_FILE = resource.rc
 
+OTHER_FILES += \
+    help.md \
+    README.md \
+    LICENSE \
+    icon.ico \
+    icon.png \
+    wechat.png \
+    alipay.png
+
+
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
