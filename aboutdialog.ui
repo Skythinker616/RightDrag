@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AboutDialog</class>
+ <widget class="QDialog" name="AboutDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>579</width>
+    <height>448</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:3px solid rgb(0, 170, 255);</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;由于学习工作的需要，我们在课余时间设计了这个小软件，希望也能对您有所帮助&lt;/p&gt;&lt;p&gt;如果您有什么建议或意见，可以到帮助菜单中点击反馈告诉我们&lt;/p&gt;&lt;p&gt;如果您喜欢我们的作品，也可以捐赠来支持我们哟&lt;/p&gt;&lt;hr width=&quot;300&quot;/&gt;&lt;p align=&quot;center&quot;&gt;框选截图&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;版本号：V1.0&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;更新时间：2020.6.30&lt;/p&gt;&lt;hr width=&quot;300&quot;/&gt;&lt;p align=&quot;center&quot;&gt;本软件使用GPL协议Qt开发 &lt;a style=&quot;text-decoration: none&quot; href=&quot;https://github.com/BowenLan/RightDrag&quot;&gt;项目地址&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+     <property name="margin">
+      <number>10</number>
+     </property>
+     <property name="openExternalLinks">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btnReturn">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>宋体</family>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+font-weight:bold;
+background-color: #FFFFFF;
+color: rgb(0, 170, 255);
+border-radius: 5px;
+border: 2px groove rgb(0, 170, 255);
+}
+QPushButton:pressed{
+font-weight:bold;
+background-color: rgb(0, 170, 255);
+color: #FFFFFF;
+border-radius: 5px;
+border: 2px groove rgb(0, 170, 255);
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string>返回</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

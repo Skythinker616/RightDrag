@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SettingsDialog</class>
+ <widget class="QDialog" name="SettingsDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>522</width>
+    <height>430</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog{
+background-color: rgb(255, 255, 255);
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1,1,0">
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+border:2px solid rgb(0, 170, 255);
+}</string>
+     </property>
+     <property name="title">
+      <string>OCR识别设置</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Api Key</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="txt_apiKey"/>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Secret Key</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="txt_secretKey"/>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>识别语言</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="combo_ocrLang">
+        <item>
+         <property name="text">
+          <string>中英混合</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>英文</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>日语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>韩语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>法语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>西班牙语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>葡萄牙语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>德语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>意大利语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>俄语</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+border:2px solid rgb(0, 170, 255);
+}</string>
+     </property>
+     <property name="title">
+      <string>翻译设置</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>源语言</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="combo_srcLang">
+        <item>
+         <property name="text">
+          <string>中文</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>文言文</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>繁体中文</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>英语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>日语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>韩语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>法语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>西班牙语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>俄语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>葡萄牙语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>德语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>意大利语</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>50</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>目标语言</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="combo_dstLang">
+        <item>
+         <property name="text">
+          <string>中文</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>英文</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>粤语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>文言文</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>日语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>韩语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>法语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>西班牙语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>泰语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>阿拉伯语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>俄语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>葡萄牙语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>德语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>意大利语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>希腊语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>荷兰语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>波兰语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>保加利亚语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>爱沙尼亚语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>丹麦语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>芬兰语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>捷克语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>罗马尼亚语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>斯洛文尼亚语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>瑞典语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>匈牙利语</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>繁体中文</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>越南语</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>49</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QGroupBox" name="groupBox_3">
+       <property name="styleSheet">
+        <string notr="true">QGroupBox{
+border:2px solid rgb(0, 170, 255);
+}</string>
+       </property>
+       <property name="title">
+        <string>组合键设置</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QCheckBox" name="check_ctrl">
+          <property name="text">
+           <string>Ctrl</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="check_shift">
+          <property name="text">
+           <string>Shift</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="check_alt">
+          <property name="text">
+           <string>Alt</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox_4">
+       <property name="styleSheet">
+        <string notr="true">QGroupBox{
+border:2px solid rgb(0, 170, 255);
+}</string>
+       </property>
+       <property name="title">
+        <string>选框样式</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>线形</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QComboBox" name="combo_lineStyle">
+          <item>
+           <property name="text">
+            <string>实线</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>长虚线</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>短虚线</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QSpinBox" name="spin_lineWidth">
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>30</number>
+          </property>
+          <property name="value">
+           <number>8</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>线颜色</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>线宽</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QPushButton" name="btn_lineColor">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="default">
+           <bool>false</bool>
+          </property>
+          <property name="flat">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox_5">
+       <property name="styleSheet">
+        <string notr="true">QGroupBox{
+border:2px solid rgb(0, 170, 255);
+}</string>
+       </property>
+       <property name="title">
+        <string>其他设置</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QCheckBox" name="check_autoCopy">
+          <property name="text">
+           <string>自动复制结果</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QLabel" name="label_9">
+            <property name="text">
+             <string>浮窗不透明度</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="spin_opacity">
+            <property name="minimum">
+             <double>0.100000000000000</double>
+            </property>
+            <property name="maximum">
+             <double>1.000000000000000</double>
+            </property>
+            <property name="singleStep">
+             <double>0.050000000000000</double>
+            </property>
+            <property name="value">
+             <double>0.800000000000000</double>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetDefaultConstraint</enum>
+     </property>
+     <item>
+      <widget class="QPushButton" name="btnAccept">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+font-weight:bold;
+background-color: #FFFFFF;
+color: rgb(0, 170, 255);
+border-radius: 5px;
+border: 2px groove rgb(0, 170, 255);
+}
+QPushButton:pressed{
+font-weight:bold;
+background-color: rgb(0, 170, 255);
+color: #FFFFFF;
+border-radius: 5px;
+border: 2px groove rgb(0, 170, 255);
+}
+</string>
+       </property>
+       <property name="text">
+        <string>确认</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnCancel">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+font-weight:bold;
+background-color: #FFFFFF;
+color: rgb(0, 170, 255);
+border-radius: 5px;
+border: 2px groove rgb(0, 170, 255);
+}
+QPushButton:pressed{
+font-weight:bold;
+background-color: rgb(0, 170, 255);
+color: #FFFFFF;
+border-radius: 5px;
+border: 2px groove rgb(0, 170, 255);
+}
+</string>
+       </property>
+       <property name="text">
+        <string>取消</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
