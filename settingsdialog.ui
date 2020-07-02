@@ -260,7 +260,7 @@ border:2px solid rgb(0, 170, 255);
         </item>
         <item>
          <property name="text">
-          <string>英文</string>
+          <string>英语</string>
          </property>
         </item>
         <item>
@@ -546,13 +546,6 @@ border:2px solid rgb(0, 170, 255);
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
-         <widget class="QCheckBox" name="check_autoCopy">
-          <property name="text">
-           <string>自动复制结果</string>
-          </property>
-         </widget>
-        </item>
-        <item>
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <item>
            <widget class="QLabel" name="label_9">
@@ -578,6 +571,20 @@ border:2px solid rgb(0, 170, 255);
            </widget>
           </item>
          </layout>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="check_autoCopy">
+          <property name="text">
+           <string>自动复制结果</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="check_blockMouse">
+          <property name="text">
+           <string>拦截鼠标事件</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>

@@ -7,6 +7,7 @@ AboutDialog::AboutDialog(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowTitle("关于");
+    setAttribute(Qt::WA_DeleteOnClose,true);//设置关闭窗口时销毁
 }
 
 AboutDialog::~AboutDialog()
@@ -16,5 +17,5 @@ AboutDialog::~AboutDialog()
 
 void AboutDialog::on_btnReturn_clicked()
 {
-    hide();
+    close();
 }

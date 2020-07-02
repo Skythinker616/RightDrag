@@ -1,3 +1,4 @@
+/*翻译，调用百度接口*/
 #ifndef TRANS_H
 #define TRANS_H
 
@@ -8,19 +9,20 @@ class BaiduTrans : public QObject
 {
     Q_OBJECT
 public:
-    enum Error{
+    enum Error{//错误类型
         Err_JsonParseFailed,
         Err_Network,
         Err_Unknown
     };
     explicit BaiduTrans(QObject *parent = nullptr);
-    void sendTrans(const QString &text);
-    void setSrcLang(QString &lang);
+    ~BaiduTrans();
+    void sendTrans(const QString &text);//发送翻译请求
+    void setSrcLang(QString &lang);//设置源语言和目标语言
     void setDstLang(QString &lang);
 
 private:
-    QMap<QString,QString> langMap;
-    QString fromLang,toLang;
+    QMap<QString,QString> langMap;//语言代码对照表
+    QString fromLang,toLang;//目标语言，源语言
     QString appId,secret;
     QNetworkAccessManager *manager;
 

@@ -1,3 +1,4 @@
+/*关于信息窗口*/
 #ifndef ABOUTDIALOG_H
 #define ABOUTDIALOG_H
 

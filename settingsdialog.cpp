@@ -18,16 +18,19 @@ SettingsDialog::~SettingsDialog()
     delete ui;
 }
 
+//判定配置文件是否存在
 bool SettingsDialog::confExist()
 {
     QFileInfo file(confFilePath);
     return file.exists();
 }
 
+//加载设置
 void SettingsDialog::loadSettings()
 {
     QSettings settings(confFilePath,QSettings::IniFormat);
     settings.beginGroup("settings");
+    values.version=settings.value("version").toString();
     values.trans_srcLang=settings.value("trans_srcLang").toString();
     values.trans_dstLang=settings.value("trans_dstLang").toString();
     values.ocr_apiKey=settings.value("ocr_apiKey").toString();
@@ -42,13 +45,16 @@ void SettingsDialog::loadSettings()
     values.autoCopy=settings.value("autoCopy").toBool();
     values.sysMode=(SysMode)settings.value("sysMode").toInt();
     values.floatOpacity=settings.value("floatOpacity").toDouble();
+    values.blockMouse=settings.value("blockMouse").toBool();
 }
 
+//保存设置
 void SettingsDialog::saveSettings()
 {
     QSettings settings(confFilePath,QSettings::IniFormat);
     settings.clear();
     settings.beginGroup("settings");
+    settings.setValue("version",values.version);
     settings.setValue("trans_srcLang",values.trans_srcLang);
     settings.setValue("trans_dstLang",values.trans_dstLang);
     settings.setValue("ocr_apiKey",values.ocr_apiKey);
@@ -63,9 +69,11 @@ void SettingsDialog::saveSettings()
     settings.setValue("autoCopy",values.autoCopy);
     settings.setValue("sysMode",values.sysMode);
     settings.setValue("floatOpacity",values.floatOpacity);
-    settings.sync();
+    settings.setValue("blockMouse",values.blockMouse);
+    settings.sync();//将设置写入文件
 }
 
+//显示设置窗口
 void SettingsDialog::display()
 {
     show();
@@ -83,23 +91,27 @@ void SettingsDialog::display()
     ui->btn_lineColor->setText(values.rectLineColor.name());
     ui->check_autoCopy->setChecked(values.autoCopy);
     ui->spin_opacity->setValue(values.floatOpacity);
+    ui->check_blockMouse->setChecked(values.blockMouse);
 }
 
+//弹出颜色选择框让用户选择选框颜色
 void SettingsDialog::on_btn_lineColor_clicked()
 {
     QColorDialog colorDialog(this);
     colorDialog.setWindowTitle("请选择颜色");
     colorDialog.setCurrentColor(QColor(ui->btn_lineColor->text()));
-    if(colorDialog.exec()==QColorDialog::Accepted)
+    if(colorDialog.exec()==QColorDialog::Accepted)//用户确定了颜色选择
     {
-        QColor color=colorDialog.selectedColor();
+        QColor color=colorDialog.selectedColor();//获取用户选择的颜色
         ui->btn_lineColor->setStyleSheet("font-weight:bold;color:"+color.name());
         ui->btn_lineColor->setText(color.name());
     }
 }
 
+//用户按下按钮确认设置
 void SettingsDialog::on_btnAccept_clicked()
 {
+    //保存控件信息到values
     values.ocr_apiKey=ui->txt_apiKey->text();
     values.ocr_secretKey=ui->txt_secretKey->text();
     values.ocr_lang=ui->combo_ocrLang->currentText();
@@ -113,9 +125,10 @@ void SettingsDialog::on_btnAccept_clicked()
     values.rectLineColor=QColor(ui->btn_lineColor->text());
     values.autoCopy=ui->check_autoCopy->checkState();
     values.floatOpacity=ui->spin_opacity->value();
-    saveSettings();
-    emit sigSettingsAccepted();
-    hide();
+    values.blockMouse=ui->check_blockMouse->checkState();
+    saveSettings();//保存values到文件
+    emit sigSettingsAccepted();//发出设置确认信号
+    hide();//隐藏设置界面
 }
 
 void SettingsDialog::on_btnCancel_clicked()
